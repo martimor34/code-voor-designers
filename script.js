@@ -1,54 +1,29 @@
-
+// declareer alle variabele
 var indicator = document.querySelector(".indicator");
 var hartjes = document.querySelectorAll(".hartje");
 
+
 for(var i = 0; i < hartjes.length; i++){
   hartjes[i].addEventListener("click", function() {
-   indicator.classList.toggle('off');
+
+
+    indicator.classList.add('pulse');
+    setTimeout(function(){
+        	indicator.classList.remove('pulse');
+        }, 500);
+
+    this.classList.toggle('saved');
+
+    var saved = document.querySelectorAll(".saved").length;
+    var amount = document.getElementById('amount');
+    amount.innerHTML = saved;
+
+    if(amount.innerHTML === "0") {
+
+     amount.style.display = "none";
+        } else {
+          amount.style.display = "block";
+      }
+   document.querySelectorAll(".saved").length;
   });
 }
-
-console.log(hartjes);
-
-// hartjes.addEventListener("click",function(){
-//     indicator.classList.toggle('off');
-//   }
-// );
-
-
-
-
-
-
-
-
-
-
-//declaratie van dom elementen
-// var vergrootglas = document.querySelector('header img:last-of-type');
-// var zoekveld = document.querySelector('header');
-//
-// //actie !
-// vergrootglas.addEventListener("click",function(){
-//     zoekveld.classList.toggle('search');
-//   }
-// );
-
-/*
-EventListeners
-  click
-  mouseover
-  mousedown
-  mouseup
-  ...
-  https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
-*/
-
-/*
-Classlist
-  classList.add( String )
-  classList.remove( String )
-  classList.toggle ( String )
-  ...
-  https://developer.mozilla.org/en-US/docs/Web/API/Element/classList
-*/
